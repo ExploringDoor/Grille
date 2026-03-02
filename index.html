@@ -258,7 +258,7 @@ footer{background:var(--forest);padding:48px 40px;text-align:center}
     </div>
     <div class="hero-right">
       <div class="hero-award">
-        <img src="https://raw.githubusercontent.com/ExploringDoor/Grille/main/Header.png" alt="Award"/>
+        <img src="Header.png" alt="Award"/>
         <div class="hero-award-text">
           <strong>Best of Jersey Shore 2024</strong>
           <span>Voted #1 Breakfast Spot</span>
@@ -295,9 +295,9 @@ footer{background:var(--forest);padding:48px 40px;text-align:center}
   <div class="inner">
     <div class="about-layout">
       <div class="about-photos reveal">
-        <img src="https://raw.githubusercontent.com/ExploringDoor/Grille/main/boardwalk.jpg" alt="Restaurant exterior"/>
-        <img src="https://raw.githubusercontent.com/ExploringDoor/Grille/main/grille.jpg" alt="Food close-up"/>
-        <img src="https://raw.githubusercontent.com/ExploringDoor/Grille/main/Glass%20window.jpg" alt="Dining scene"/>
+        <img src="boardwalk.jpg" alt="Restaurant exterior"/>
+        <img src="grille.jpg" alt="Food close-up"/>
+        <img src="Glass window.jpg" alt="Dining scene"/>
       </div>
       <div class="reveal">
         <div class="eyebrow">Our Story</div>
@@ -307,7 +307,7 @@ footer{background:var(--forest);padding:48px 40px;text-align:center}
           <p>Every dish is prepared with care, using quality ingredients and recipes perfected over nearly two decades of early mornings and busy summers. Whether you're grabbing a quick bite before hitting the beach or settling in for a long brunch with family, we're here to make your morning right.</p>
         </div>
         <div class="award-strip">
-          <img src="https://raw.githubusercontent.com/ExploringDoor/Grille/main/Header.png" alt="Award badge"/>
+          <img src="Header.png" alt="Award badge"/>
           <div class="award-strip-text">
             <strong>Best of Jersey Shore 2024</strong>
             Voted by locals and visitors as the top breakfast destination on the shore.
@@ -393,11 +393,11 @@ footer{background:var(--forest);padding:48px 40px;text-align:center}
       <h2 class="h2">Life at <em>the Grille</em></h2>
     </div>
     <div class="gallery-grid reveal">
-      <img src="https://raw.githubusercontent.com/ExploringDoor/Grille/main/night.jpg" alt="Restaurant"/>
-      <img src="https://raw.githubusercontent.com/ExploringDoor/Grille/main/food.jpg" alt="Food"/>
-      <img src="https://raw.githubusercontent.com/ExploringDoor/Grille/main/food1.jpg" alt="Pancakes"/>
-      <img src="https://raw.githubusercontent.com/ExploringDoor/Grille/main/food2.jpg" alt="Breakfast plate"/>
-      <img src="https://raw.githubusercontent.com/ExploringDoor/Grille/main/people%20eating.jpg" alt="Dining"/>
+      <img src="night.jpg" alt="Restaurant"/>
+      <img src="food.jpg" alt="Food"/>
+      <img src="food1.jpg" alt="Pancakes"/>
+      <img src="food2.jpg" alt="Breakfast plate"/>
+      <img src="people eating.jpg" alt="Dining"/>
     </div>
   </div>
 </section>
@@ -456,7 +456,7 @@ footer{background:var(--forest);padding:48px 40px;text-align:center}
   <div class="inner">
     <div class="team-layout">
       <div class="team-img reveal">
-        <img src="https://raw.githubusercontent.com/ExploringDoor/Grille/main/Team.png" alt="The team"/>
+        <img src="Team.png" alt="The team"/>
         <div class="team-img-badge">
           <strong>Since '06</strong>
           <span>Shore Institution</span>
@@ -552,7 +552,7 @@ footer{background:var(--forest);padding:48px 40px;text-align:center}
   <p class="fcopy">© 2025 Fishin' Pier Grille · Stone Harbor &amp; Avalon, NJ</p>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 // Custom cursor
 const cursor = document.getElementById('cursor');
 const ring = document.getElementById('cursorRing');
@@ -594,4 +594,14 @@ function handleSubmit(e) {
   setTimeout(() => { btn.textContent = 'Send Message \u2192'; btn.style.background = ''; e.target.reset(); }, 3000);
 }
 // Reveal on scroll
-const observer = new IntersectionObserver(
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
